@@ -63,7 +63,7 @@ export default function TentangPage() {
                 </h2>
                 <div className="space-y-4 text-muted-foreground">
                   <p>
-                    Pesantren kami didirikan pada tahun 1985 dengan visi menjadi pusat pendidikan Islam yang unggul dan berwawasan global. Berawal dari sebuah musholla kecil dengan beberapa santri, kini telah berkembang menjadi kompleks pendidikan modern yang melayani ribuan santri.
+                    Pesantren kami didirikan pada tahun 2017 dengan visi menjadi pusat pendidikan Islam yang unggul dan berwawasan global. Berawal dari sebuah musholla kecil dengan beberapa santri, kini telah berkembang menjadi kompleks pendidikan modern yang melayani ribuan santri.
                   </p>
                   <p>
                     Dalam perjalanannya, pesantren kami terus berinovasi dalam metode pembelajaran dengan tetap mempertahankan nilai-nilai Islam yang fundamental. Kami mengintegrasikan pendidikan agama dengan sains modern, teknologi, dan pengembangan keterampilan.

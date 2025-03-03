@@ -11,7 +11,7 @@ export default function Footer() {
             <span>Darul Quran</span>
           </Link>
           <p className="mt-4 text-sm text-muted-foreground">
-            Mendidik generasi berakhlak mulia, berilmu, dan berwawasan global sejak 1985.
+            Mendidik generasi berakhlak mulia, berilmu, dan berwawasan global sejak 2017.
           </p>
           <div className="mt-6 flex gap-4">
             <Link href="#" className="text-muted-foreground hover:text-primary">
