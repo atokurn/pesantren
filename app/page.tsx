@@ -19,7 +19,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70 z-10" />
           <div className="relative h-[600px] w-full">
             <Image
-              src="/placeholder.svg?height=600&width=1200"
+              src="/beranda.jpg?height=600&width=1200"
               alt="Pondok Pesantren"
               fill
               className="object-cover"
@@ -97,7 +97,7 @@ export default function HomePage() {
               </div>
             </div>
             <div className="relative aspect-square overflow-hidden rounded-xl">
-              <Image src="https://kzmojy42em04yrw54ztm.lite.vusercontent.net/placeholder.svg?height=600&width=600" alt="Kegiatan Santri" fill className="object-cover" />
+              <Image src="/beranda.jpg?height=600&width=600" alt="Kegiatan Santri" fill className="object-cover" />
             </div>
           </div>
         </section>
