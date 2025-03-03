@@ -11,7 +11,7 @@ export default function Footer() {
             <span>Darul Quran</span>
           </Link>
           <p className="mt-4 text-sm text-muted-foreground">
-            Mendidik generasi berakhlak mulia, berilmu, dan berwawasan global sejak 2017.
+            Mendidik generasi berakhlak mulia, berilmu, dan berwawasan global sejak 1985.
           </p>
           <div className="mt-6 flex gap-4">
             <Link href="#" className="text-muted-foreground hover:text-primary">
@@ -103,7 +103,7 @@ export default function Footer() {
       </div>
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 border-t pt-6">
         <p className="text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Yayasan Darul Quran. Hak Cipta Dilindungi.
+          &copy; {new Date().getFullYear()} Yayasan Pendidikan Islam. Hak Cipta Dilindungi.
         </p>
       </div>
     </footer>

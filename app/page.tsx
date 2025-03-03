@@ -48,7 +48,7 @@ export default function HomePage() {
             <div>
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Tentang Yayasan Kami</h2>
               <p className="mt-4 text-muted-foreground">
-                Yayasan kami didirikan pada tahun 2017 dengan visi menjadi pusat pendidikan Islam yang unggul dan
+                Yayasan kami didirikan pada tahun 1985 dengan visi menjadi pusat pendidikan Islam yang unggul dan
                 berwawasan global.
               </p>
               <p className="mt-4">
