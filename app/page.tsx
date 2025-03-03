@@ -19,7 +19,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70 z-10" />
           <div className="relative h-[600px] w-full">
             <Image
-              src="/beranda.jpg?height=600&width=1200"
+              src="/masjid.jpg?height=600&width=1200"
               alt="Pondok Pesantren"
               fill
               className="object-cover"

@@ -40,6 +40,18 @@ export default function PendaftaranPage() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
+      namaLengkap: "",
+      tempatLahir: "",
+      tanggalLahir: undefined,
+      jenisKelamin: undefined,
+      alamat: "",
+      telepon: "",
+      email: "",
+      namaAyah: "",
+      namaIbu: "",
+      teleponOrtu: "",
+      asalSekolah: "",
+      program: "",
       setuju: false,
     },
   })
@@ -66,7 +78,8 @@ export default function PendaftaranPage() {
       console.error('Error submitting form:', error)
       setSubmitMessage({ 
         type: 'error', 
-        text: 'Terjadi kesalahan saat mengirim data. Silakan coba lagi.' 
+        text: 'Terjadi kesalahan saat mengirim data. Silakan coba lagi atau gunakan formulir alternatif. ' +
+              '<a href="/pendaftaran/fallback-form.html" target="_blank" class="underline text-primary hover:text-primary/80">Buka formulir alternatif</a>'
       })
     } finally {
       setIsSubmitting(false)

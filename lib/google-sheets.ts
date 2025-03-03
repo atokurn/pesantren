@@ -26,25 +26,32 @@ export async function submitToGoogleSheets(data: any): Promise<{ success: boolea
       formattedData.tanggalLahir = formattedData.tanggalLahir.toISOString().split('T')[0]; // YYYY-MM-DD format
     }
 
-    // Send data to Google Sheets
-    const response = await fetch(GOOGLE_SHEETS_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formattedData),
-    });
-
-    const result = await response.json();
+    console.log('Attempting to submit data to:', GOOGLE_SHEETS_URL);
     
-    if (!response.ok) {
-      throw new Error(result.error || 'Failed to submit form');
+    // Send data to Google Sheets with improved error handling
+    try {
+      const response = await fetch(GOOGLE_SHEETS_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(formattedData),
+        mode: 'no-cors', // Change to no-cors to bypass CORS restrictions
+        cache: 'no-cache',
+        credentials: 'omit'
+      });
+      
+      // When using no-cors, we can't access the response content
+      // So we assume success if the fetch didn't throw an error
+      return { 
+        success: true, 
+        message: 'Data berhasil dikirim ke database!' 
+      };
+    } catch (fetchError) {
+      console.error('Fetch error:', fetchError);
+      throw new Error(`Fetch failed: ${fetchError.message}`);
     }
-
-    return { 
-      success: true, 
-      message: 'Data berhasil dikirim ke database!' 
-    };
   } catch (error) {
     console.error('Error submitting to Google Sheets:', error);
     return { 

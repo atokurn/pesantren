@@ -9,13 +9,13 @@ export default function StatsSection() {
       description: "Dari berbagai daerah di Indonesia",
     },
     {
-      value: "100+",
+      value: "20+",
       label: "Tenaga Pengajar",
       icon: BookOpen,
       description: "Ustadz dan guru profesional",
     },
     {
-      value: "35+",
+      value: "8+",
       label: "Tahun Pengalaman",
       icon: School,
       description: "Mendidik generasi bangsa",
