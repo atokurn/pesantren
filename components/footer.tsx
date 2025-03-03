@@ -103,7 +103,7 @@ export default function Footer() {
       </div>
       <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 mt-12 border-t pt-6">
         <p className="text-center text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Yayasan Pendidikan Islam. Hak Cipta Dilindungi.
+          &copy; {new Date().getFullYear()} Yayasan Darul Quran.
         </p>
       </div>
     </footer>

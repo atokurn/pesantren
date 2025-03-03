@@ -4,6 +4,7 @@ import { useState } from "react"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import * as z from "zod"
+import { submitToGoogleSheets } from "@/lib/google-sheets"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
@@ -44,16 +45,32 @@ export default function PendaftaranPage() {
   })
 
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitMessage, setSubmitMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null)
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true)
+    setSubmitMessage(null)
     console.log(values)
-    // Implement form submission logic here
-    setTimeout(() => {
+    
+    try {
+      // Submit form data to Google Sheets
+      const result = await submitToGoogleSheets(values)
+      
+      if (result.success) {
+        setSubmitMessage({ type: 'success', text: result.message })
+        form.reset()
+      } else {
+        setSubmitMessage({ type: 'error', text: result.message })
+      }
+    } catch (error) {
+      console.error('Error submitting form:', error)
+      setSubmitMessage({ 
+        type: 'error', 
+        text: 'Terjadi kesalahan saat mengirim data. Silakan coba lagi.' 
+      })
+    } finally {
       setIsSubmitting(false)
-      alert("Pendaftaran berhasil dikirim!")
-      form.reset()
-    }, 2000)
+    }
   }
 
   return (
@@ -340,6 +357,15 @@ export default function PendaftaranPage() {
                     )}
                   />
 
+                  {submitMessage && (
+                    <div className={`p-4 mb-4 rounded-md ${
+                      submitMessage.type === 'success' ? 'bg-green-50 text-green-700 border border-green-200' : 
+                      'bg-red-50 text-red-700 border border-red-200'
+                    }`}>
+                      {submitMessage.text}
+                    </div>
+                  )}
+                  
                   <Button type="submit" className="w-full" disabled={isSubmitting}>
                     {isSubmitting ? "Mengirim..." : "Kirim Pendaftaran"}
                   </Button>

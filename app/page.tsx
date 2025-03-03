@@ -28,7 +28,7 @@ export default function HomePage() {
           </div>
           <div className="container absolute inset-0 z-20 flex flex-col items-center justify-center text-center text-white">
             <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
-              Yayasan Pendidikan Islam
+              Yayasan Darul Quran
             </h1>
             <p className="mt-4 max-w-[700px] text-lg sm:text-xl">
               Mendidik generasi berakhlak mulia, berilmu, dan berwawasan global
