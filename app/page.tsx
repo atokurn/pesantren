@@ -476,6 +476,7 @@ export default function HomePage() {
                   dan ilmu umum.
                 </p>
                 <div className="flex flex-wrap gap-4">
+                  
                   <Button size="lg" className="bg-white text-primary hover:bg-white/90">
                     Pendaftaran Online
                   </Button>
